@@ -1,0 +1,146 @@
+/* SPEVION - PARTE COMUM (usada por index.html e login.html)
+   Cores, base, cabeçalho, botões e campos. */
+/* 1. CORES DA SPEVION
+   As variáveis evitam repetir cores e permitem trocar o tema.
+   Paleta dos slides: #0F1F1A, #2E4D3F, #D4AF7C, #F5F5EF, #A7B8A7. */
+:root {
+    color-scheme: light;
+    /* TAMANHOS DE FONTE - mude aqui e vale para o site inteiro */
+    --fonte-marca: clamp(16px, 4.5vw, 20px);   /* nome SPEVION no topo */
+    --fonte-mini: 12px;     /* etiquetas, selos, notas pequenas */
+    --fonte-pequena: 14px;  /* legendas e textos de apoio */
+    --fonte-texto: 15px;     /* textos secundários, botões, campos */
+    --fundo: #F5F5EF;
+    --superficie: #FFFFFF;
+    --superficie-suave: #EBEFE8;
+    --texto: #0F1F1A;
+    --texto-suave: #57665D;
+    --borda: #D9E0D7;
+    --primaria: #2E4D3F;
+    --texto-botao: #FFFFFF;
+    --dourado: #D4AF7C;
+    --campo: #FFFFFF;
+    --foco: #42684E;
+    --erro: #A32727;
+    --fundo-erro: #FFF0EE;
+    --fundo-mensagem: #EAF1E7;
+}
+html[data-tema="escuro"] {
+    color-scheme: dark;
+    --fundo: #0F1F1A;
+    --superficie: #162B22;
+    --superficie-suave: #1B3128;
+    --texto: #F5F5EF;
+    --texto-suave: #B0C0B3;
+    --borda: #334C3E;
+    --primaria: #D4AF7C;
+    --texto-botao: #0F1F1A;
+    --campo: #12271E;
+    --foco: #D4AF7C;
+    --erro: #FFB9AF;
+    --fundo-erro: #432B28;
+    --fundo-mensagem: #213D2E;
+}
+
+/* 2. BASE: elementos que se repetem em todas as páginas. */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+body { margin: 0; background: var(--fundo); color: var(--texto); font-family: Arial, Helvetica, sans-serif; font-size: 16px; line-height: 1.6; }
+[hidden] { display: none !important; }
+a { color: inherit; text-decoration: none; }
+button, input, select { font: inherit; }
+button, a, input, select, summary { -webkit-tap-highlight-color: transparent; }
+button, summary { cursor: pointer; }
+button { color: inherit; }
+button:disabled { cursor: not-allowed; opacity: .55; }
+button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--foco); outline-offset: 4px; }
+input, select, button { min-width: 0; }
+img { max-width: 100%; display: block; }
+svg { width: 22px; height: 22px; flex-shrink: 0; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { line-height: 1.14; }
+h2 { font-size: clamp(30px, 3.2vw, 45px); font-weight: 500; letter-spacing: -.04em; margin-bottom: 20px; }
+h3 { font-size: 20px; font-weight: 600; }
+p { margin-bottom: 20px; }
+.limite { width: min(1160px, calc(100% - 64px)); margin: 0 auto; }
+.etiqueta { font-size: var(--fonte-mini); font-weight: 700; letter-spacing: .14em; color: var(--texto-suave); margin-bottom: 22px; }
+.botao { min-height: 50px; display: inline-flex; justify-content: center; align-items: center; gap: 24px; padding: 13px 22px; border: 1px solid transparent; border-radius: 7px; color: var(--texto-botao); background: var(--primaria); font-weight: 600; font-size: var(--fonte-texto); transition: filter .18s, transform .18s; }
+.botao:hover:not(:disabled) { filter: brightness(1.12); transform: translateY(-1px); }
+.botao-pequeno { min-height: 42px; padding: 8px 17px; gap: 20px; }
+.botao-largo { width: 100%; }
+.botao-contorno { background: transparent; border-color: var(--borda); color: var(--texto); }
+.link-texto { font-size: var(--fonte-texto); font-weight: 500; }
+.link-texto:hover { text-decoration: underline; text-underline-offset: 5px; }
+.pular-conteudo { position: fixed; top: 8px; left: 8px; z-index: 100; padding: 12px; color: var(--texto-botao); background: var(--primaria); transform: translateY(-160%); }
+.pular-conteudo:focus { transform: translateY(0); }
+
+/* 3. CABEÇALHO E NAVEGAÇÃO */
+.cabecalho { position: sticky; top: 0; z-index: 20; background: var(--fundo); border-bottom: 1px solid var(--borda); }
+.topo { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 72px; }
+.marca { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.nome-marca { font-size: var(--fonte-marca); letter-spacing: .15em; font-weight: 700; }
+.espaco-logo { display: grid; place-content: center; width: 76px; height: 48px; border-radius: 4px; color: var(--texto-suave); font-size: var(--fonte-mini); text-align: center; line-height: 1.3; }
+.logo { width: 64px; height: 64px; object-fit: contain; }
+.menu-principal { display: flex; gap: 26px; align-items: center; }
+.link-menu { font-size: 15px; color: var(--texto-suave); padding: 8px 0; } /* Ferramentas, Simulador, Sua jornada, Conteúdos */
+.link-menu:hover { color: var(--texto); text-decoration: underline; text-decoration-color: #000; text-underline-offset: 6px; }
+html[data-tema="escuro"] .link-menu:hover { text-decoration-color: #D4AF7C; } /* tema escuro: linha dourada */
+.acoes-topo { display: flex; align-items: center; gap: 16px; }
+.botao-tema { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--borda); border-radius: 50%; background: transparent; flex-shrink: 0; }
+.botao-tema:hover { background: var(--superficie-suave); }
+.icone-sol { display: none; }
+html[data-tema="escuro"] .icone-sol { display: block; }
+html[data-tema="escuro"] .icone-lua { display: none; }
+.botao-menu { display: none; }
+
+/* CAMPOS, SELO, MENSAGENS E ESPAÇO DE IMAGEM (usados nas duas páginas) */
+.espaco-imagem { background: var(--superficie-suave); color: var(--texto-suave); border: 1px dashed var(--texto-suave); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-align: center; }
+.marcacao-imagem { width: 42px; height: 42px; border: 1px solid var(--borda); display: grid; place-items: center; font-size: 24px; font-weight: 300; margin-bottom: 8px; border-radius: 6px; }
+.selo { display: inline-block; border: 1px solid var(--borda); color: var(--texto-suave); padding: 4px 10px; border-radius: 4px; font-size: var(--fonte-mini); white-space: nowrap; }
+.campo { display: flex; flex-direction: column; gap: 8px; }
+.campo label { font-size: var(--fonte-texto); font-weight: 500; }
+.campo input, .campo select { font-size: 16px; width: 100%; min-height: 50px; padding: 12px 14px; border: 1px solid var(--borda); border-radius: 6px; color: var(--texto); background: var(--campo); }
+.campo input::placeholder { color: var(--texto-suave); opacity: .8; }
+.campo small { font-size: var(--fonte-pequena); color: var(--texto-suave); }
+.mensagem { font-size: var(--fonte-texto); padding: 12px 14px; border-radius: 6px; background: var(--fundo-mensagem); color: var(--texto); margin-top: 20px; }
+.mensagem-erro { color: var(--erro); background: var(--fundo-erro); }
+
+/* CELULARES E TABLETS: cabeçalho */
+@media (max-width: 1100px) {
+    .topo { gap: 15px; }
+    .menu-principal { gap: 18px; }
+}
+@media (max-width: 940px) {
+    .botao-menu { display: block; padding: 8px 10px; margin-left: auto; border: 1px solid var(--borda); border-radius: 5px; background: transparent; min-height: 42px; font-size: 14px; }
+    .menu-principal { display: none; position: absolute; left: 32px; right: 32px; top: calc(100% + 8px); flex-direction: column; align-items: stretch; gap: 0; padding: 12px 22px; background: var(--superficie); border: 1px solid var(--borda); border-radius: 8px; box-shadow: 0 15px 35px #00000012; }
+    .menu-principal.aberto { display: flex; }
+    .link-menu { padding: 13px 0; }
+}
+@media (max-width: 700px) {
+    html { scroll-padding-top: 100px; }
+    .limite { width: calc(100% - 40px); }
+    .topo { min-height: 76px; gap: 12px; }
+    .acoes-topo { gap: 10px; }
+    .menu-principal { left: 20px; right: 20px; }
+}
+@media (max-width: 480px) {
+    .espaco-logo { display: grid; width: 52px; height: 40px; }
+    .marca { gap: 7px; }
+    .nome-marca { letter-spacing: .1em; }
+    .logo { width: 52px; height: 52px; }
+    .topo { gap: 8px; }
+    .botao-menu { padding: 6px 8px; }
+    .botao-tema { width: 36px; height: 36px; }
+    .botao-pequeno { padding: 8px 11px; gap: 8px; min-height: 40px; font-size: var(--fonte-pequena); }
+    .acoes-topo { gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; }
+}
+
+/* PÁGINAS DE TEXTO (privacidade) */
+.texto-legal { max-width: 760px; padding: 60px 0 80px; }
+.texto-legal h1 { font-size: clamp(32px, 4vw, 46px); font-weight: 500; letter-spacing: -.04em; margin-bottom: 24px; }
+.texto-legal h2 { font-size: 22px; margin: 34px 0 10px; letter-spacing: -.02em; }
+.texto-legal p { color: var(--texto-suave); }

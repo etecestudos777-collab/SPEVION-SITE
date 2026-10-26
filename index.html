@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="claro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Planeje seu primeiro imóvel com o SPEVION. Explore seu orçamento, organize a entrada e simule parcelas.">
+    <meta name="theme-color" content="#F5F5EF">
+    <link rel="icon" type="image/png" href="imagens/favicon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="SPEVION">
+    <meta property="og:title" content="SPEVION | Seu primeiro imóvel começa com um plano">
+    <meta property="og:description" content="Planeje seu primeiro imóvel com o SPEVION. Explore seu orçamento, organize a entrada e simule parcelas.">
+    <meta property="og:url" content="https://enchanting-granita-a507e8.netlify.app/">
+    <meta property="og:image" content="https://enchanting-granita-a507e8.netlify.app/imagens/og-spevion.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>SPEVION | Seu primeiro imóvel começa com um plano</title>
+    <link rel="stylesheet" href="comum.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="spevion.js"></script>
+    <script src="configuracao.js" defer></script>
+    <script src="autenticacao.js" defer></script>
+</head>
+<body>
+    <!-- link escondido: só aparece ao apertar a tecla Tab (ajuda quem navega pelo teclado) -->
+    <a href="#conteudo" class="pular-conteudo">Pular para o conteúdo</a>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <div class="limite topo">
+            <a class="marca" href="index.html">
+                <span class="espaco-logo"><img class="logo" src="imagens/logo-spevion.webp" alt="SPEVION" width="300" height="249"></span>
+            </a>
+            <button class="botao-menu" type="button" aria-controls="menu-principal" aria-expanded="false">Menu</button>
+            <nav class="menu-principal" id="menu-principal">
+                <a class="link-menu" href="#planejamento">Meu orçamento</a>
+                <a class="link-menu" href="#meu-ape">Meu primeiro apê</a>
+                <a class="link-menu" href="#simulador">Simulador</a>
+                <a class="link-menu" href="#missoes">Missões</a>
+                <a class="link-menu" href="#jornada">Sua jornada</a>
+                <a class="link-menu" href="#conteudos">Conteúdos</a>
+            </nav>
+            <div class="acoes-topo">
+                <button class="botao-tema" type="button">
+                    <svg class="icone-lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.2A8.6 8.6 0 0 1 9.8 4a8.6 8.6 0 1 0 10.2 10.2Z"/></svg>
+                    <svg class="icone-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+                </button>
+                <a class="botao botao-pequeno" href="login.html" data-link-conta>Entrar <span>↗</span></a>
+            </div>
+        </div>
+    </header>
+
+    <main id="conteudo">
+        <!-- APRESENTAÇÃO -->
+        <section class="apresentacao limite" id="inicio">
+            <div class="texto-apresentacao">
+                <p class="etiqueta">PLANEJAR. EVOLUIR. CONQUISTAR.</p>
+                <h1>Seu primeiro imóvel começa com <span id="plano">um plano.</span></h1>
+                <p class="texto-abertura">Entenda suas finanças, descubra possibilidades e dê o próximo passo em direção à sua casa.</p>
+                <div class="grupo-botoes">
+                    <a class="botao" href="#planejamento">Começar meu planejamento <span>↗</span></a>
+                    <button class="botao botao-contorno" type="button" data-demonstracao>Explorar demonstração <span>↗</span></button>
+                </div>
+                <p class="nota-apresentacao">No seu ritmo. De acordo com a sua realidade.</p>
+            </div>
+            <div class="visual-apresentacao">
+                <!-- As imagens da pasta se alternam a cada 4 segundos. -->
+                <div class="carrossel-principal" id="carrossel-principal" role="region" aria-roledescription="carrossel" aria-label="Inspirações para seu primeiro imóvel">
+                    <button class="controle-carrossel" id="pausar-carrossel" type="button" aria-label="Pausar troca de imagens" hidden>Pausar</button>
+                    <img class="imagem-principal ativa" src="imagens/primeiro-lar.webp" width="1000" height="1000" fetchpriority="high" alt="Sala do primeiro lar com sofá verde, plantas e luz natural.">
+
+<img class="imagem-principal" src="imagens/mesa-planejamento.webp" width="1000" height="1000" loading="lazy" decoding="async" alt="Mesa para planejamento do primeiro imóvel.">
+
+<img class="imagem-principal" src="imagens/predio-acolhedor.webp" width="1000" height="1000" loading="lazy" decoding="async" alt="Prédio de apartamentos com jardim e árvores ao redor.">
+
+<img class="imagem-principal" src="imagens/cantinho-primeiro-lar.webp" width="1000" height="1000" loading="lazy" decoding="async" alt="Cantinho do primeiro lar.">
+                </div>
+                <div class="legenda-visual">
+                    <span class="numero-legenda" id="contador-carrossel">01 / 04</span>
+                    <p>O primeiro passo é<br><strong>entender suas possibilidades.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FERRAMENTAS: os cartões levam às ferramentas desta página. -->
+        <section class="secao secao-ferramentas" id="ferramentas">
+            <div class="limite">
+                <div class="titulo-linha">
+                    <div><p class="etiqueta">MAIS CLAREZA, A CADA PASSO</p><h2>Do primeiro plano<br>à próxima decisão.</h2></div>
+                    <p>Ferramentas simples para transformar<br class="somente-computador"> uma ideia em um objetivo possível.</p>
+                </div>
+                <div class="grade-ferramentas">
+                    <a class="cartao-ferramenta" href="#planejamento">
+                        <span class="numero-cartao">01</span><h3>Entenda seu orçamento</h3>
+                        <p>Compare renda e gastos para visualizar quanto pode reservar por mês.</p>
+                        <span class="link-cartao">Organizar minhas finanças <span>↗</span></span>
+                    </a>
+                    <a class="cartao-ferramenta" href="#e-se">
+                        <span class="numero-cartao">02</span><h3>Explore possibilidades</h3>
+                        <p>Teste quanto guardar por mês e descubra o prazo para chegar à sua entrada.</p>
+                        <span class="link-cartao">Testar um “E se…?” <span>↗</span></span>
+                    </a>
+                    <a class="cartao-ferramenta" href="#missoes">
+                        <span class="numero-cartao">03</span><h3>Encontre seu próximo passo</h3>
+                        <p>Complete missões, ganhe XP e avance na trilha do primeiro imóvel.</p>
+                        <span class="link-cartao">Conhecer minhas missões <span>↗</span></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- DIAGNÓSTICO: soma os gastos por categoria e subtrai da renda. -->
+        <section class="secao faixa-planejamento" id="planejamento">
+            <div class="limite">
+                <div class="titulo-linha">
+                    <div><p class="etiqueta">ANTES DAS CHAVES, O PLANEJAMENTO</p><h2>Como está o seu mês?</h2></div>
+                    <p>Um diagnóstico financeiro simples.<br>Informe os valores mensais de cada categoria.</p>
+                </div>
+                <div class="grade-diagnostico">
+                    <form class="formulario-planejamento" id="formulario-planejamento">
+                        <h3>Minha renda e meus gastos</h3>
+                        <div class="campo campo-renda"><label for="renda">Renda mensal (R$)</label><input id="renda" type="number" inputmode="decimal" min="0" max="100000000" step="0.01" placeholder="Ex.: 4000" required></div>
+                        <div class="grade-campos">
+                            <div class="campo"><label for="gasto-moradia">Moradia (R$)</label><input id="gasto-moradia" type="number" inputmode="decimal" min="0" max="100000000" step="0.01" value="0" required></div>
+                            <div class="campo"><label for="gasto-alimentacao">Alimentação (R$)</label><input id="gasto-alimentacao" type="number" inputmode="decimal" min="0" max="100000000" step="0.01" value="0" required></div>
+                            <div class="campo"><label for="gasto-transporte">Transporte (R$)</label><input id="gasto-transporte" type="number" inputmode="decimal" min="0" max="100000000" step="0.01" value="0" required></div>
+                            <div class="campo"><label for="gasto-contas">Contas e serviços (R$)</label><input id="gasto-contas" type="number" inputmode="decimal" min="0" max="100000000" step="0.01" value="0" required></div>
+                            <div class="campo"><label for="gasto-lazer">Lazer (R$)</label><input id="gasto-lazer" type="number" inputmode="decimal" min="0" max="100000000" step="0.01" value="0" required></div>
+                            <div class="campo"><label for="gasto-outros">Outros gastos (R$)</label><input id="gasto-outros" type="number" inputmode="decimal" min="0" max="100000000" step="0.01" value="0" required></div>
+                        </div>
+                        <button class="botao botao-largo" type="submit">Salvar diagnóstico <span>↗</span></button>
+                        <p class="ajuda-campo" id="aviso-diagnostico">O gráfico e o painel usam o último diagnóstico salvo.</p>
+                    </form>
+                    <div class="cartao-painel cartao-diagnostico">
+                        <p class="etiqueta">UM RETRATO DO SEU ORÇAMENTO</p>
+                        <p class="rotulo-resumo">Saldo mensal disponível</p><strong class="numero-saldo" id="saldo-mensal">—</strong>
+                        <p class="texto-saldo" id="prazo-meta">Salve seu diagnóstico para ver o saldo.</p>
+                        <div class="cabecalho-grafico"><h3>Para onde vai seu dinheiro?</h3><p>Gastos totais: <strong id="gastos">—</strong></p></div>
+                        <div class="grafico-gastos" id="grafico-gastos" aria-label="Distribuição dos gastos por categoria">
+                            <p class="ajuda-campo">As barras aparecem depois do seu primeiro diagnóstico.</p>
+                        </div>
+                        <p class="ajuda-campo">Cada barra mostra a participação da categoria no total dos gastos e, ao lado, quanto ela pesa na sua renda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAINEL: os valores vêm dos formulários de meta e diagnóstico. -->
+        <section class="secao limite" id="meu-ape">
+            <div class="titulo-linha">
+                <div><p class="etiqueta">SEU PLANO, EM MOVIMENTO</p><h2>Meu primeiro apê.</h2></div>
+                <button class="botao botao-contorno botao-pequeno" type="button" data-demonstracao>Explorar demonstração ↗</button>
+            </div>
+            <div class="aviso-demonstracao" id="aviso-demonstracao" hidden>
+                <div><strong>Modo demonstração · dados fictícios</strong><p>Explore à vontade. Ao sair, seu planejamento salvo volta. Ao recarregar, o exemplo recomeça.</p></div>
+                <button class="botao botao-contorno botao-pequeno" type="button" id="sair-demonstracao">Sair da demonstração</button>
+            </div>
+            <nav class="atalhos-painel" aria-label="Ferramentas do planejamento">
+                <a href="#planejamento">01 · Diagnóstico</a><a href="#e-se">02 · E se…?</a><a href="#missoes">03 · Missões</a><a href="#jornada">04 · Trilha</a><a href="#perfil">Meu perfil ↗</a>
+            </nav>
+            <div class="grade-painel">
+                <div class="cartao-meta">
+                    <p class="etiqueta">CADA PASSO CONTA</p>
+                    <h3>Sua entrada está tomando forma.</h3>
+                    <p class="rotulo-parcela">Valor já guardado</p>
+                    <p class="valor-parcela" id="painel-guardado">R$ 0,00</p>
+                    <div class="linha-progresso"><span id="texto-meta">Defina sua meta para começar.</span><strong id="percentual-meta">0%</strong></div>
+                    <progress id="progresso-meta" value="0" max="100" aria-label="Progresso da meta de entrada"></progress>
+                    <dl class="lista-resultados">
+                        <div><dt>Meta de entrada</dt><dd id="painel-meta">—</dd></div>
+                        <div><dt>Falta guardar</dt><dd id="painel-falta">—</dd></div>
+                        <div><dt>Saldo do mês</dt><dd id="painel-saldo">—</dd></div>
+                    </dl>
+                    <button class="botao botao-contorno botao-pequeno" type="button" id="imprimir-plano">Imprimir ou salvar em PDF ↗</button>
+                    <p class="nota-resultado" id="resumo-meta">Seu primeiro passo pode ser pequeno. Comece definindo uma meta.</p>
+                </div>
+                <form class="cartao-painel formulario-meta" id="formulario-meta">
+                    <p class="etiqueta">DO OBJETIVO À CONQUISTA</p><h3>Qual é a sua meta?</h3>
+                    <div class="campo"><label for="meta-entrada">Meta para a entrada (R$)</label><input id="meta-entrada" type="number" inputmode="decimal" min="0.01" max="100000000" step="0.01" placeholder="Ex.: 60000" required></div>
+                    <div class="campo"><label for="valor-guardado">Total já guardado (R$)</label><input id="valor-guardado" type="number" inputmode="decimal" min="0" max="100000000" step="0.01" value="0" required></div>
+                    <p class="ajuda-campo">Quando guardar mais, atualize o total acumulado aqui.</p>
+                    <button class="botao botao-largo" type="submit">Salvar minha meta <span>↗</span></button>
+                </form>
+            </div>
+            <aside class="dica-momento" aria-labelledby="titulo-dica">
+                <span class="icone-dica" aria-hidden="true">↗</span>
+                <div><p class="etiqueta">DICA DO MOMENTO</p><h3 id="titulo-dica">Conheça seu ponto de partida.</h3><p id="texto-dica">Preencha sua renda e seus gastos para entender o que sobra no mês.</p></div>
+                <a class="link-texto" id="acao-dica" href="#planejamento">Fazer diagnóstico ↗</a>
+            </aside>
+            <p class="ajuda-campo aviso-local" id="aviso-salvamento">Seu planejamento e perfil ficam salvos apenas neste navegador, sem vínculo com a conta de login.</p>
+            <p class="mensagem" id="mensagem-painel" role="status" hidden></p>
+        </section>
+
+        <!-- E SE: cenário livre, sem alterar a meta salva no painel. -->
+        <section class="secao limite" id="e-se">
+            <div class="titulo-linha">
+                <div><p class="etiqueta">PEQUENAS ESCOLHAS, NOVOS CENÁRIOS</p><h2>E se eu guardar um pouco mais?</h2></div>
+                <p>Teste uma possibilidade e compare o tempo<br class="somente-computador"> para chegar à entrada.</p>
+            </div>
+            <div class="caixa-simulador">
+                <form class="formulario-simulador" id="formulario-cenario">
+                    <div class="cabecalho-formulario"><h3>Simulador “E se…?”</h3><button class="botao botao-contorno botao-pequeno" type="button" id="usar-planejamento">Usar meu plano</button></div>
+                    <div class="grade-campos">
+                        <div class="campo"><label for="cenario-meta">Meta de entrada (R$)</label><input id="cenario-meta" type="number" inputmode="decimal" min="0.01" max="100000000" step="0.01" placeholder="Ex.: 60000" required></div>
+                        <div class="campo"><label for="cenario-guardado">Já guardado (R$)</label><input id="cenario-guardado" type="number" inputmode="decimal" min="0" max="100000000" step="0.01" value="0" required></div>
+                        <div class="campo"><label for="cenario-mensal">Guardar por mês (R$)</label><input id="cenario-mensal" type="number" inputmode="decimal" min="0" max="100000000" step="0.01" value="0" required></div>
+                        <div class="campo"><label for="cenario-extra">Extra por mês (R$)</label><input id="cenario-extra" type="number" inputmode="decimal" min="0" max="100000000" step="0.01" value="0" required></div>
+                    </div>
+                    <p class="ajuda-campo">O extra é somado ao valor mensal. Testar aqui não muda sua meta salva.</p>
+                    <button class="botao botao-largo" type="submit">Comparar cenários <span>↗</span></button>
+                </form>
+                <div class="resultado-simulador" aria-live="polite">
+                    <p class="etiqueta">UM FUTURO POSSÍVEL</p><p class="rotulo-parcela">Tempo com o valor extra</p>
+                    <p class="valor-parcela" id="cenario-prazo">—</p>
+                    <p class="periodo-parcela" id="cenario-comparacao">Preencha os valores e compare os cenários.</p>
+                    <dl class="lista-resultados">
+                        <div><dt>Sem o valor extra</dt><dd id="cenario-base">—</dd></div>
+                        <div><dt>Total mensal com extra</dt><dd id="cenario-total">—</dd></div>
+                        <div><dt>Falta para a entrada</dt><dd id="cenario-falta">—</dd></div>
+                    </dl>
+                    <p class="nota-resultado">Estimativa sem rendimentos ou inflação, arredondada para meses completos. Reserve espaço no orçamento para imprevistos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIMULADOR: os cálculos estão em spevion.js. -->
+        <section class="secao limite" id="simulador">
+            <div class="titulo-linha">
+                <div><p class="etiqueta">UM COMEÇO MAIS CONCRETO</p><h2>Tire seu plano do papel.</h2></div>
+                <p>Experimente valores e veja como<br class="somente-computador"> cada escolha muda o cenário.</p>
+            </div>
+            <div class="caixa-simulador">
+                <form method="post" class="formulario-simulador" id="formulario-simulador">
+                    <div class="cabecalho-formulario"><h3>Simule suas parcelas</h3><span class="selo" id="selo-sistema">Tabela Price</span></div>
+                    <div class="grade-campos">
+                        <div class="campo"><label for="valor-imovel">Valor do imóvel</label><div class="entrada-unidade"><span>R$</span><input id="valor-imovel" name="valor-imovel" type="number" inputmode="decimal" min="1" max="100000000" step="0.01" value="300000" required></div></div>
+                        <div class="campo"><label for="valor-entrada">Valor de entrada</label><div class="entrada-unidade"><span>R$</span><input id="valor-entrada" name="valor-entrada" type="number" inputmode="decimal" min="0" max="100000000" step="0.01" value="60000" required></div></div>
+                        <div class="campo"><label for="prazo">Prazo do financiamento</label><select id="prazo" name="prazo"><option value="120">10 anos · 120 meses</option><option value="180">15 anos · 180 meses</option><option value="240">20 anos · 240 meses</option><option value="300">25 anos · 300 meses</option><option value="360" selected>30 anos · 360 meses</option><option value="420">35 anos · 420 meses</option></select></div>
+                        <div class="campo"><label for="taxa-juros">Juros ao mês</label><div class="entrada-unidade unidade-final"><input id="taxa-juros" name="taxa-juros" type="number" inputmode="decimal" min="0" max="10" step="0.001" value="0.8" required><span>%</span></div></div>
+                        <div class="campo"><label for="taxa-anual">Ou juros ao ano (opcional)</label><div class="entrada-unidade unidade-final"><input id="taxa-anual" name="taxa-anual" type="number" inputmode="decimal" min="0" max="200" step="0.01" placeholder="Ex.: 10"><span>%</span></div></div>
+                        <div class="campo"><label for="sistema">Sistema de amortização</label><select id="sistema" name="sistema"><option value="price" selected>Price · parcelas fixas</option><option value="sac">SAC · parcelas decrescentes</option></select></div>
+                    </div>
+                    <p class="ajuda-campo">Os valores preenchidos são exemplos. Informe a taxa ao mês ou ao ano: ao digitar a taxa anual, convertemos para a mensal equivalente.</p>
+                    <p class="mensagem mensagem-erro" id="erro-simulador" hidden></p>
+                    <button class="botao botao-largo" type="submit" disabled>Calcular estimativa <span>↗</span></button>
+                    <noscript><p>Ative o JavaScript do navegador para realizar os cálculos.</p></noscript>
+                </form>
+                <div class="resultado-simulador" aria-live="polite">
+                    <p class="etiqueta">SEU CENÁRIO</p>
+                    <p class="rotulo-parcela" id="rotulo-parcela-simulador">Parcela mensal estimada</p>
+                    <p class="valor-parcela" id="parcela-estimada">—</p>
+                    <p class="periodo-parcela" id="periodo-parcela">Calcule para ver o resultado.</p>
+                    <dl class="lista-resultados">
+                        <div><dt>Valor financiado</dt><dd id="total-financiado">—</dd></div>
+                        <div><dt>Total de juros</dt><dd id="total-juros">—</dd></div>
+                        <div><dt>Total com a entrada</dt><dd id="total-pago">—</dd></div>
+                    </dl>
+                    <p id="parcela-orcamento" aria-live="polite"></p>
+                    <p class="nota-resultado">Estimativa educativa, sem seguros, tarifas ou correção monetária. Não representa aprovação ou proposta de crédito.</p>
+                </div>
+            </div>
+            <p class="fonte-calculo">Metodologia de parcelas fixas: <a href="https://www.bcb.gov.br/pec/calculo/calc_financiamento/metodologia.asp" target="_blank" rel="noopener noreferrer">Banco Central do Brasil <span>↗</span></a></p>
+        </section>
+
+        <!-- MISSÕES: cada atividade vale XP uma única vez. -->
+        <section class="secao faixa-planejamento" id="missoes">
+            <div class="limite">
+                <div class="titulo-linha">
+                    <div><p class="etiqueta">PLANEJAR TAMBÉM É EVOLUIR</p><h2>Seu próximo passo vale XP.</h2></div>
+                    <p>Complete as atividades, acompanhe seu nível<br class="somente-computador"> e desbloqueie conquistas.</p>
+                </div>
+                <div class="grade-evolucao">
+                    <div>
+                        <div class="lista-missoes">
+                            <a class="missao" id="missao-diagnostico" href="#planejamento"><span class="estado-missao" aria-hidden="true">01</span><span><strong>Conheça seu orçamento</strong><small>Salve seu primeiro diagnóstico.</small></span><span class="recompensa">80 XP</span></a>
+                            <a class="missao" id="missao-meta" href="#meu-ape"><span class="estado-missao" aria-hidden="true">02</span><span><strong>Dê um número ao seu sonho</strong><small>Defina e salve a meta de entrada.</small></span><span class="recompensa">60 XP</span></a>
+                            <a class="missao" id="missao-cenario" href="#e-se"><span class="estado-missao" aria-hidden="true">03</span><span><strong>Explore um “E se…?”</strong><small>Compare o prazo com um valor extra.</small></span><span class="recompensa">60 XP</span></a>
+                            <a class="missao" id="missao-financiamento" href="#simulador"><span class="estado-missao" aria-hidden="true">04</span><span><strong>Entenda as parcelas</strong><small>Calcule uma estimativa de financiamento.</small></span><span class="recompensa">40 XP</span></a>
+                            <a class="missao" id="missao-perfil" href="#perfil"><span class="estado-missao" aria-hidden="true">05</span><span><strong>Deixe o perfil com a sua cara</strong><small>Escolha seu apelido e avatar.</small></span><span class="recompensa">30 XP</span></a>
+                        </div>
+                        <p class="ajuda-campo">Cada missão conta uma vez. Cada etapa marcada da trilha vale mais 50 XP; desmarcar remove os pontos dessa etapa.</p>
+                    </div>
+                    <section class="cartao-painel cartao-perfil" id="perfil" aria-labelledby="titulo-perfil">
+                        <p class="etiqueta" id="titulo-perfil">MEU PERFIL</p>
+                        <div class="identidade-perfil"><span class="avatar-perfil" id="avatar-perfil" role="img" aria-label="Avatar: Casa">🏡</span><div><h3 id="apelido-perfil">Visitante</h3><p id="nivel-perfil">Nível 1 · Explorador</p></div></div>
+                        <div class="linha-progresso"><strong id="xp-perfil">0 XP</strong><span id="proximo-nivel">100 XP para o nível 2</span></div>
+                        <progress id="progresso-xp" value="0" max="100" aria-label="Progresso até o próximo nível"></progress>
+                        <details class="editar-perfil"><summary>Personalizar perfil</summary>
+                            <form id="formulario-perfil">
+                                <div class="campo"><label for="apelido">Seu apelido</label><input id="apelido" type="text" maxlength="24" minlength="2" placeholder="Como quer ser chamado?" required></div>
+                                <div class="campo"><label for="avatar">Seu avatar</label><select id="avatar"><option value="casa">🏡 Casa</option><option value="planta">🌱 Planta</option><option value="estrela">⭐ Estrela</option><option value="sol">☀️ Sol</option><option value="bussola">🧭 Bússola</option></select></div>
+                                <button class="botao botao-largo" type="submit">Salvar perfil</button>
+                                <p class="ajuda-campo" id="mensagem-perfil" role="status"></p>
+                            </form>
+                        </details>
+                        <h3 class="titulo-medalhas">Minhas medalhas</h3>
+                        <div class="grade-medalhas">
+                            <div class="medalha" id="medalha-primeiro"><span aria-hidden="true">✦</span><strong>Primeiro passo</strong><small>Salve um diagnóstico.</small><em>Bloqueada</em></div>
+                            <div class="medalha" id="medalha-plano"><span aria-hidden="true">⌂</span><strong>Plano traçado</strong><small>Salve a meta e teste um cenário.</small><em>Bloqueada</em></div>
+                            <div class="medalha" id="medalha-evolucao"><span aria-hidden="true">↗</span><strong>Em evolução</strong><small>Alcance 200 XP.</small><em>Bloqueada</em></div>
+                            <div class="medalha" id="medalha-trilha"><span aria-hidden="true">✓</span><strong>Trilha completa</strong><small>Marque as quatro etapas.</small><em>Bloqueada</em></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRILHA: details abre a explicação; checkbox marca a conclusão. -->
+        <section class="secao limite" id="jornada">
+            <div class="titulo-linha">
+                <div><p class="etiqueta">UMA ETAPA DE CADA VEZ</p><h2>Trilha do primeiro imóvel.</h2></div>
+                <div class="andamento-jornada"><span id="texto-progresso">0 de 4 etapas concluídas</span><progress id="progresso-jornada" value="0" max="4" aria-label="Etapas concluídas da trilha"></progress></div>
+            </div>
+            <div class="grade-jornada">
+                <article class="etapa"><span class="numero-etapa">01 · PLANEJAMENTO</span><h3>Conheça seu orçamento</h3><p>Entenda de onde vem e para onde vai seu dinheiro.</p><details><summary>Entender esta etapa</summary><p>Some sua renda mensal e liste as despesas, incluindo gastos pequenos. Renda menos gastos é o saldo do mês. Se o saldo for negativo, os gastos superam a renda.</p><a class="link-texto" href="#planejamento">Fazer diagnóstico ↗</a></details><label class="marcar-etapa"><input type="checkbox" data-etapa="orcamento"> Concluí esta etapa · 50 XP</label></article>
+                <article class="etapa"><span class="numero-etapa">02 · ENTRADA</span><h3>Defina seu objetivo</h3><p>Transforme a entrada em uma meta que você possa acompanhar.</p><details><summary>Entender esta etapa</summary><p>A entrada é a parte do imóvel paga com recursos próprios. Defina quanto quer juntar e desconte o que já tem guardado. No “E se…?”, divida o que falta pelo valor mensal para estimar o prazo.</p><a class="link-texto" href="#meu-ape">Definir minha meta ↗</a></details><label class="marcar-etapa"><input type="checkbox" data-etapa="entrada"> Concluí esta etapa · 50 XP</label></article>
+                <article class="etapa"><span class="numero-etapa">03 · FINANCIAMENTO</span><h3>Compare possibilidades</h3><p>Conheça o efeito da entrada, do prazo e dos juros.</p><details><summary>Entender esta etapa</summary><p>O financiamento divide o valor emprestado em parcelas com juros. Compare o custo total e as condições, além da parcela mensal. Nosso simulador usa a Tabela Price ou o SAC e não inclui todos os custos de um contrato real.</p><a class="link-texto" href="#simulador">Explorar parcelas ↗</a></details><label class="marcar-etapa"><input type="checkbox" data-etapa="simulacao"> Concluí esta etapa · 50 XP</label></article>
+                <article class="etapa"><span class="numero-etapa">04 · PRÓXIMOS PASSOS</span><h3>Prepare a compra</h3><p>Organize informações e conheça os custos envolvidos.</p><details><summary>Entender esta etapa</summary><p>Além da entrada, existem despesas da compra e da mudança. Separe documentos pessoais e comprovantes de renda e confirme a lista necessária com a instituição. A simulação do site não garante aprovação de crédito.</p><a class="link-texto" href="#conteudos">Ver dúvidas frequentes ↗</a></details><label class="marcar-etapa"><input type="checkbox" data-etapa="documentos"> Concluí esta etapa · 50 XP</label></article>
+            </div>
+            <p class="ajuda-campo" id="aviso-jornada">Marque as etapas depois de ler e concluir as atividades. Seu progresso acompanha o perfil neste navegador.</p>
+        </section>
+
+        <!-- CONTEÚDOS: respostas curtas em blocos que abrem ao clicar. -->
+        <section class="secao faixa-conteudos" id="conteudos">
+            <div class="limite grade-conteudos">
+                <div><p class="etiqueta">INFORMAÇÃO QUE APROXIMA</p><h2>Entender também<br>faz parte do caminho.</h2><p>Algumas dúvidas para começar<br class="somente-computador"> com mais clareza.</p></div>
+                <div class="perguntas">
+                    <details><summary>O que o simulador está calculando?</summary><p>Uma estimativa pela Tabela Price (parcelas fixas) ou pelo SAC (parcelas que diminuem ao longo do tempo), usando o valor financiado, a taxa mensal e o número de meses que você informou. Contratos reais podem ter outras regras e incluir custos adicionais.</p></details>
+                    <details><summary>A entrada é o único valor que preciso guardar?</summary><p>O planejamento também deve considerar despesas da compra, da mudança e uma reserva para imprevistos. Os valores variam conforme o imóvel e a operação; confirme os custos antes de decidir.</p></details>
+                    <details><summary>Onde consultar o uso do FGTS?</summary><p>Confira as condições diretamente nos canais oficiais. <a href="https://www.caixa.gov.br/voce/habitacao/Paginas/default.aspx" target="_blank" rel="noopener noreferrer">Consultar habitação na CAIXA ↗</a></p></details>
+                    <details><summary>Preciso criar uma conta para começar?</summary><p>Você pode usar as ferramentas sem cadastro. O diagnóstico, a meta, o perfil e as missões ficam salvos neste navegador. Ao entrar na sua conta, o plano também é guardado nela e acompanha você em outros aparelhos. No modo demonstração, os dados são fictícios e as mudanças duram só enquanto a página estiver aberta.</p></details>
+                </div>
+            </div>
+        </section>
+        <section class="secao limite" id="sobre">
+            <div class="titulo-linha"><div><p class="etiqueta">SOBRE O PROJETO</p><h2>Feito para quem sonha com a primeira casa.</h2></div></div>
+            <p class="texto-sobre">O SPEVION é um projeto acadêmico de TCC da ETEC de Mauá. Ele reúne ferramentas educativas de orçamento, metas e simulação de parcelas para ajudar a organizar o caminho até o primeiro imóvel. As estimativas não substituem a análise de uma instituição financeira e não representam proposta de crédito.</p>
+            <p class="ajuda-campo">Metodologia de cálculo: <a href="https://www.bcb.gov.br/pec/calculo/calc_financiamento/metodologia.asp" target="_blank" rel="noopener noreferrer">Banco Central do Brasil ↗</a>. Condições de financiamento e FGTS: <a href="https://www.caixa.gov.br/voce/habitacao/Paginas/default.aspx" target="_blank" rel="noopener noreferrer">CAIXA ↗</a>.</p>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="limite rodape-conteudo"><div><a class="nome-marca" href="#inicio">SPEVION</a><p>Planejar. Evoluir. Conquistar.</p></div><p>Projeto acadêmico · ETEC de Mauá<br><span>Planejamento para o primeiro imóvel · 2026</span><br><span>Conteúdo educativo; não é aconselhamento financeiro.</span></p><div><a class="link-texto" href="privacidade.html">Privacidade</a><a class="link-texto" href="#inicio">Voltar ao início ↑</a></div></div>
+    </footer>
+</body>
+</html>

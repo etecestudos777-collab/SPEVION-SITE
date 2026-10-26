@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="claro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F5F5EF">
+    <meta name="description" content="Entre ou crie sua conta no SPEVION e continue o planejamento do seu primeiro imóvel.">
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/png" href="imagens/favicon.png">
+    <title>Entrar ou criar conta | SPEVION</title>
+    <link rel="stylesheet" href="comum.css">
+    <link rel="stylesheet" href="login.css">
+    <script src="spevion.js"></script>
+    <script src="configuracao.js" defer></script>
+    <script src="autenticacao.js" defer></script>
+</head>
+<body class="pagina-acesso">
+    <!-- link escondido: só aparece ao apertar a tecla Tab -->
+    <a href="#conteudo" class="pular-conteudo">Pular para o conteúdo</a>
+    <header class="cabecalho">
+        <div class="limite topo">
+            <a class="marca" href="index.html">
+                <span class="espaco-logo"><img class="logo" src="imagens/logo-spevion.webp" alt="SPEVION" width="300" height="249"></span>
+            </a>
+            <div class="acoes-topo">
+                <a class="link-texto voltar-site" href="index.html">← Voltar ao site</a>
+                <button class="botao-tema" type="button">
+                    <svg class="icone-lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.2A8.6 8.6 0 0 1 9.8 4a8.6 8.6 0 1 0 10.2 10.2Z"/></svg>
+                    <svg class="icone-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="limite acesso" id="conteudo">
+        <aside class="apresentacao-acesso">
+            <p class="etiqueta">UM NOVO CAPÍTULO COMEÇA AQUI</p>
+            <h2>O seu futuro<br>merece <span id="plano-acesso">um plano.</span></h2>
+            <p>Um passo de cada vez.<br>Mais perto do seu primeiro imóvel.</p>
+            <img class="imagem-acesso" src="imagens/chaves-primeiro-apartamento.webp" width="1000" height="667" loading="lazy" decoding="async" alt="Chaves do primeiro apartamento sobre uma mesa de madeira perto da porta de entrada.">
+            <span class="assinatura-acesso">SPEVION · PLANEJAR. EVOLUIR. CONQUISTAR.</span>
+        </aside>
+
+        <div class="painel-acesso">
+            <div id="area-formularios">
+                <p class="etiqueta">SEU ESPAÇO NO SPEVION</p>
+                <h1 id="titulo-acesso">Bom ter você aqui.</h1>
+                <p class="introducao-acesso" id="introducao-acesso">Entre na sua conta para continuar.</p>
+                <div class="abas-acesso" role="tablist" aria-label="Entrar ou criar conta">
+                    <button id="aba-entrar" type="button" role="tab" aria-selected="true" tabindex="0">Entrar</button>
+                    <button id="aba-cadastro" type="button" role="tab" aria-selected="false" tabindex="-1">Criar conta</button>
+                </div>
+                <div id="painel-entrar">
+                    <form method="post" id="formulario-entrar">
+                        <div class="campo"><label for="email-entrar">E-mail</label><input id="email-entrar" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" maxlength="254" required></div>
+                        <div class="campo"><label for="senha-entrar">Senha</label><div class="campo-senha"><input id="senha-entrar" name="senha" type="password" autocomplete="current-password" required><button type="button" class="mostrar-senha" data-senha="senha-entrar">Mostrar</button></div></div>
+                        <button class="botao botao-largo" type="submit" data-autenticacao disabled>Entrar na minha conta <span>↗</span></button>
+                        <div class="ajuda-acesso">
+                            <button type="button" id="recuperar-senha" data-autenticacao disabled>Esqueci minha senha</button>
+                            <button type="button" id="reenviar-confirmacao" data-autenticacao disabled>Reenviar confirmação de e-mail</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="painel-cadastro" hidden>
+                    <form method="post" id="formulario-cadastro">
+                        <div class="campo"><label for="nome-cadastro">Seu nome</label><input id="nome-cadastro" name="nome" type="text" autocomplete="name" placeholder="Como podemos chamar você?" minlength="2" maxlength="80" required></div>
+                        <div class="campo"><label for="email-cadastro">E-mail</label><input id="email-cadastro" name="email" type="email" autocomplete="email" placeholder="voce@exemplo.com" maxlength="254" required></div>
+                        <div class="campo"><label for="senha-cadastro">Crie uma senha</label><div class="campo-senha"><input id="senha-cadastro" name="senha" type="password" autocomplete="new-password" minlength="8" required><button type="button" class="mostrar-senha" data-senha="senha-cadastro">Mostrar</button></div><small>Use pelo menos 8 caracteres.</small></div>
+                        <div class="campo"><label for="confirmar-senha">Confirme a senha</label><input id="confirmar-senha" name="confirmar-senha" type="password" autocomplete="new-password" minlength="8" required></div>
+                        <button class="botao botao-largo" type="submit" data-autenticacao disabled>Criar minha conta <span>↗</span></button>
+                    </form>
+                </div>
+            </div>
+
+            <section id="area-recuperacao" hidden>
+                <p class="etiqueta">RECUPERAR ACESSO</p>
+                <h1>Escolha uma nova senha.</h1>
+                <p class="introducao-acesso">Use pelo menos 8 caracteres e confirme abaixo.</p>
+                <form method="post" id="formulario-nova-senha">
+                    <div class="campo"><label for="nova-senha">Nova senha</label><div class="campo-senha"><input id="nova-senha" type="password" autocomplete="new-password" minlength="8" required><button type="button" class="mostrar-senha" data-senha="nova-senha">Mostrar</button></div></div>
+                    <div class="campo"><label for="confirmar-nova-senha">Confirme a nova senha</label><input id="confirmar-nova-senha" type="password" autocomplete="new-password" minlength="8" required></div>
+                    <button class="botao botao-largo" type="submit" data-autenticacao disabled>Salvar nova senha <span>↗</span></button>
+                </form>
+                <button class="botao botao-contorno botao-largo" id="cancelar-recuperacao" type="button" data-autenticacao disabled>Cancelar e sair da conta</button>
+            </section>
+
+            <!-- Só aparece após o serviço de autenticação confirmar uma sessão. -->
+            <section class="conta-conectada" id="area-conta" hidden>
+                <span class="selo">CONTA CONECTADA</span><h1>Você está em casa.</h1>
+                <p>Olá, <strong id="nome-usuario"></strong>.</p><p class="email-usuario" id="email-usuario"></p>
+                <p>Continue explorando as ferramentas de planejamento do SPEVION.</p>
+                <a class="botao botao-largo" href="index.html#meu-ape">Ir para meu planejamento <span>↗</span></a>
+                <button class="botao botao-contorno botao-largo" id="botao-sair" type="button" data-autenticacao disabled>Sair da conta</button>
+            </section>
+
+            <p class="mensagem" id="mensagem-acesso" role="status" hidden></p>
+            <p class="aviso-acesso" id="aviso-configuracao">Conectando ao serviço de acesso…</p>
+            <noscript><p>Ative o JavaScript para alternar as telas e acessar sua conta.</p></noscript>
+            <a class="explorar-sem-conta" href="index.html?modo=demo#meu-ape">Explorar demonstração com dados fictícios ↗</a>
+            <a class="explorar-sem-conta" href="index.html#simulador">Explorar sem uma conta <span>↗</span></a>
+        </div>
+    </main>
+    <footer class="rodape-acesso">SPEVION · Projeto acadêmico · ETEC de Mauá · 2026 · <a class="link-texto" href="privacidade.html">Privacidade</a></footer>
+</body>
+</html>

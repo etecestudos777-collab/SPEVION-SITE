@@ -1,0 +1,68 @@
+/* SPEVION - LOGIN E CADASTRO (login.html)
+   Carregue depois do comum.css. */
+
+.pagina-acesso .cabecalho { position: relative; }
+.pagina-acesso .topo { min-height: 86px; }
+.acesso { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; padding-top: 44px; padding-bottom: 40px; align-items: start; }
+.apresentacao-acesso { background: #0F1F1A; color: #F5F5EF; border-radius: 12px; padding: 44px; min-height: 680px; min-width: 0; }
+.apresentacao-acesso .etiqueta { color: #A7B8A7; font-size: var(--fonte-mini); }
+.apresentacao-acesso h2 { font-size: clamp(32px, 3.5vw, 52px); margin: 42px 0 24px; }
+#plano-acesso { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-style: italic; color: #D4AF7C; } /* "um plano." */
+.apresentacao-acesso > p:not(.etiqueta) { color: #B6C5B8; font-size: var(--fonte-texto); }
+.imagem-acesso { height: 240px; width: 100%; object-fit: cover; border-radius: 65px 8px 8px 8px; border-color: #78937E; background: #1A3126; color: #B6C5B8; margin-top: 34px; }
+.imagem-acesso .marcacao-imagem { border-color: #45604C; }
+.assinatura-acesso { display: block; margin-top: 34px; font-size: var(--fonte-mini); letter-spacing: .1em; color: #A7B8A7; }
+.painel-acesso { padding: 28px 0 0; max-width: 440px; width: 100%; }
+.painel-acesso h1 { font-size: 33px; font-weight: 500; letter-spacing: -.04em; margin-bottom: 12px; }
+.painel-acesso .etiqueta { margin-bottom: 16px; }
+.introducao-acesso { color: var(--texto-suave); font-size: var(--fonte-texto); margin-bottom: 25px; }
+.abas-acesso { display: flex; border-bottom: 1px solid var(--borda); margin-bottom: 25px; }
+.abas-acesso button { border: 0; background: transparent; flex: 1; padding: 11px 14px; border-bottom: 2px solid transparent; font-size: var(--fonte-texto); color: var(--texto-suave); }
+.abas-acesso button[aria-selected="true"] { color: var(--texto); border-bottom-color: var(--primaria); font-weight: 600; }
+.botoes-sociais { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.botao-social { border: 1px solid var(--borda); background: var(--superficie); border-radius: 6px; padding: 12px; min-height: 48px; font-size: var(--fonte-texto); }
+.botao-social:hover:not(:disabled) { background: var(--superficie-suave); }
+.separador { display: flex; align-items: center; gap: 15px; margin: 22px 0; font-size: var(--fonte-mini); color: var(--texto-suave); }
+.separador::before, .separador::after { content: ''; flex: 1; height: 1px; background: var(--borda); }
+.painel-acesso form .campo { margin-bottom: 18px; }
+.campo-senha { position: relative; }
+.campo-senha input { padding-right: 82px; }
+.mostrar-senha { position: absolute; right: 7px; top: 5px; min-height: 40px; border: 0; background: transparent; color: var(--texto-suave); font-size: var(--fonte-mini); padding: 0 8px; }
+.painel-acesso form > .botao { margin-top: 6px; }
+.aviso-acesso { padding-left: 14px; border-left: 2px solid var(--dourado); color: var(--texto-suave); font-size: var(--fonte-pequena); margin: 22px 0 18px; }
+.explorar-sem-conta { display: block; font-size: var(--fonte-pequena); color: var(--texto-suave); text-align: center; margin-top: 20px; }
+.explorar-sem-conta:hover { text-decoration: underline; }
+.rodape-acesso { text-align: center; color: var(--texto-suave); padding: 20px 24px 30px; font-size: var(--fonte-mini); }
+.conta-conectada { padding-top: 55px; }
+.conta-conectada h1 { margin-top: 26px; }
+.conta-conectada p { color: var(--texto-suave); }
+.conta-conectada .botao { margin-top: 15px; }
+.email-usuario { overflow-wrap: anywhere; }
+.ajuda-acesso { display: grid; justify-items: start; gap: 10px; margin-top: 16px; }
+.ajuda-acesso button { border: 0; background: transparent; padding: 4px 0; color: var(--texto-suave); font-size: var(--fonte-pequena); text-align: left; }
+.ajuda-acesso button:hover:not(:disabled) { text-decoration: underline; }
+.ajuda-google { margin-top: 10px; color: var(--texto-suave); font-size: var(--fonte-pequena); }
+#cancelar-recuperacao { margin-top: 14px; }
+
+/* CELULARES E TABLETS */
+@media (max-width: 1100px) {
+    .acesso { gap: 55px; }
+    .apresentacao-acesso { padding: 32px; }
+}
+@media (max-width: 940px) {
+    .acesso { gap: 35px; }
+    .apresentacao-acesso { min-height: 650px; padding: 28px; }
+    .apresentacao-acesso h2 { margin-top: 35px; }
+    .assinatura-acesso { line-height: 1.8; }
+}
+@media (max-width: 700px) {
+    .pagina-acesso .topo { min-height: 76px; }
+    .acesso { grid-template-columns: 1fr; padding: 36px 0; }
+    .apresentacao-acesso { display: none; }
+    .painel-acesso { max-width: 440px; margin: auto; padding-top: 10px; }
+    .painel-acesso h1 { font-size: 30px; }
+    .conta-conectada { padding-top: 20px; }
+}
+@media (max-width: 480px) {
+    .voltar-site { font-size: var(--fonte-mini); }
+}
